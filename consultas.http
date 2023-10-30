@@ -1,0 +1,325 @@
+## Autentificación
+POST http://localhost:192/auth
+Content-Type: application/json
+
+{
+  "nombre_usuario": "usuario2",
+  "contrasenia_usuario": "usuario2"
+}
+
+###0 Requsito nivel 3, Admin: el listado completo de usuarios sin baja lógica. estado_usuario en true
+GET http://localhost:192/usuarios/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+###1 Requsito nivel 3, Admin: el listado completo de usuarios
+GET http://localhost:192/usuarios/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+
+###2 Requsito nivel 3, Admin: datos de un usuario en particular por nro de id
+GET http://localhost:192/usuarios/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+###3 Requsito nivel 3, Admin: permite guardar un nuevo usuario
+POST http://localhost:192/usuarios/agregar
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+  {
+    "nombre_usuario": "Marcos Acosta",
+    "contrasenia_usuario":"contrasenia5",
+    "nivel":1
+  }
+
+###4 Requsito nivel 3, Admin: cambiar atributo de un usuario
+PATCH http://localhost:192/usuarios/editar/7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+  { 
+    "nombre_usuario": "prueba1",
+    "contrasenia_usuario": "prueba1",
+    "nivel": 2 
+  }
+  
+
+###5 Requsito nivel 3, Admin: por nro de id, permite borrar un usuario logicamente
+DELETE http://localhost:192/usuarios/baja/7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+###6 Requsito nivel 3, Admin: baja logica de producto por id
+DELETE http://localhost:192/producto/baja/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+###7 Requsito nivel 3, Admin: listado completo de productos
+GET http://localhost:192/productos/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+
+###8 Requsito nivel 3 o 2, Admin O Proveedor: Listado de productos sin baja lógica
+GET http://localhost:192/productos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+###9 TODOS LOS NIVELES. Obtener el nombre de un producto por id indicado
+GET http://localhost:192/productos/nombre/1
+
+###10 TODOS LOS NIVELES. Obtener la descripcion de un producto por id indicado
+GET http://localhost:192/productos/descripcion/1
+
+###11 Requisito nivel 3, Admin: Agregar un producto
+POST http://localhost:192/productos/agregar
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+  { 
+    "id_tipo_producto": 3,
+    "id_marca": 1,
+    "nombre_producto": "Producto C",
+    "descripcion":"Producto C de otra marca"
+  }
+
+
+
+###12 Requisito nivel 2 o 3, Proveedor o ADMIN: Agrega una existencia
+
+POST http://localhost:192/existencias/agregar
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+  {
+  "id_proveedor":3,
+  "id_producto":4,
+  "cantidad_existencia":200,
+  "precio":130
+  }
+
+
+###13 Requisito nivel 2 o 3. Prov o ADM: Modificar una existencia por id_existencia como paramero, Solo el admin puede modificar si el estado es falso de la existencia
+PATCH http://localhost:192/existencias/8
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+  {
+  "id_proveedor":3,
+  "id_producto":4,
+  "cantidad_existencia":150,
+  "precio":120
+  
+  }
+
+###14 Requisito nivel 2 o 3. Prov o ADM: dar de baja lógica existencia
+DELETE http://localhost:192/existencias/baja/8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+###15 Requisito 3. ADMIN: dar de alta lógica existencia. Cambia el estado a true
+PATCH http://localhost:192/existencias/alta/8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+###16 Requisito nivel 2 o 3. Prov o ADMIN: Listar las existencias sin baja lógica (borradas). Muestra las que tengan estado TRUE
+GET http://localhost:192/existencias
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+###17 Requisito nivel 3. ADMIN: Cambiar el precio a una existencia
+PATCH http://localhost:192/existencias/precio/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+  {
+    "precio":60.30
+  }
+
+###18 Requisito nivel 1,2,3. Clientes, Proveedor, Admin: Obtener el precio de una existencia por el id específicado
+GET http://localhost:192/existencias/precio/1 
+
+###19 Requisito nivel 1, Clientes. Agregar Existencias en el carrito. no puede tener más que el stock actual de existencia entre otras validaciones.
+POST http://localhost:192/carrito/agregar
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzdWFyaW8iOiJ1c3VhcmlvMiIsIm5pdmVsIjoxLCJleHAiOjE2OTg2MjcyNzcyOTksImlhdCI6MTY5ODYyMzY3N30.qUejW1dOe-4dk25dqyGW2yB8AYH0snmHwi2yVsGuvH0
+
+  {
+    "id_cliente":2,
+    "id_existencia":2,
+    "tiempo_carrito":"2023-10-26T15:30:00Z",
+    "cantidad_productos":30
+  }
+###20 Requisito nivel 1, Clientes. Eliminar existencia en el carrito con el id carrito pasado por parametro
+DELETE http://localhost:192/carrito/8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzdWFyaW8iOiJ1c3VhcmlvMSIsIm5pdmVsIjoxLCJleHAiOjE2OTg2MTk2MTE3NjUsImlhdCI6MTY5ODYxNjAxMX0.GcHYG4c3ZalThij5XoEnS9VHoyyhelowJ62TxAaWxaU
+
+###21 Requisito nivel 1, Clientes. Cambiar la cantidad pedida de la existencia(producto) con el id carrito pasado por parametro, la cantidad productos no puede ser mayor a la cantidad existencia, No se puede cambiar un carrito que no pertenece al usuario logeado
+PATCH http://localhost:192/carrito/modcantidad/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzdWFyaW8iOiJ1c3VhcmlvMSIsIm5pdmVsIjoxLCJleHAiOjE2OTg2MTk2MTE3NjUsImlhdCI6MTY5ODYxNjAxMX0.GcHYG4c3ZalThij5XoEnS9VHoyyhelowJ62TxAaWxaU
+
+  {
+    "cantidad_productos":20
+  }
+
+
+###22 Requisito nivel 1, Clientes. Listar todos los productos en el carrito del cliente, también muestra el precio de la existencia y la descripción del producto
+GET http://localhost:192/carrito/listar
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzdWFyaW8iOiJ1c3VhcmlvMiIsIm5pdmVsIjoxLCJleHAiOjE2OTg2MjY0NjU5MDksImlhdCI6MTY5ODYyMjg2NX0.xgGNtT8B7jr9Gvw4vCV5f6MLL7G4doKcRiVUnYHGnKQ
+
+###23 Cuenta con 2 funcionalidades si accede 1 cliente, lista todas sus compras(Ventas para nosotros). Si accede un administrador, lista todo el historial de venta.
+Get http://localhost:192/ventas/listar
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjI2Mjk2NDQ1LCJpYXQiOjE2OTg2MjI2OTZ9.82dCr9yW7-UgjgKbo7Dv7JgWWbx5Uhvuuh85pNNn4oA
+
+###24 Requisito nivel 3, Admin. Lista todas las compras de un client_id pasado por parametro
+Get http://localhost:192/ventas/listar/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjI2Mjk2NDQ1LCJpYXQiOjE2OTg2MjI2OTZ9.82dCr9yW7-UgjgKbo7Dv7JgWWbx5Uhvuuh85pNNn4oA
+
+###25 Requisito nivel 1, Cliente. Vaciar el carrito
+DELETE http://localhost:192/carrito/vaciar
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzdWFyaW8iOiJ1c3VhcmlvMiIsIm5pdmVsIjoxLCJleHAiOjE2OTg2MjcyNzcyOTksImlhdCI6MTY5ODYyMzY3N30.qUejW1dOe-4dk25dqyGW2yB8AYH0snmHwi2yVsGuvH0
+
+###26 Requisito nivel 3, Admin. permite obtener el teléfono de un usuario que se indica por id
+GET http://localhost:192/clientes/telefono/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjI2Mjk2NDQ1LCJpYXQiOjE2OTg2MjI2OTZ9.82dCr9yW7-UgjgKbo7Dv7JgWWbx5Uhvuuh85pNNn4oA
+
+###27 Requisito nivel 3, Admin. permite obtener el nombre de un usuario que se indica por id.
+GET http://localhost:192/clientes/nombre/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjI2Mjk2NDQ1LCJpYXQiOjE2OTg2MjI2OTZ9.82dCr9yW7-UgjgKbo7Dv7JgWWbx5Uhvuuh85pNNn4oA
+
+###28 Requisito nivel 3,Admin. Permite obtener el total del stock actual de productos, la sumatoria de los precios individuales
+GET http://localhost:192/existencias/totalstock
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjI2Mjk2NDQ1LCJpYXQiOjE2OTg2MjI2OTZ9.82dCr9yW7-UgjgKbo7Dv7JgWWbx5Uhvuuh85pNNn4oA
+
+
+
+###30 nivel 3 ADMIN, el listado completo de proveedores sin baja lógica
+GET http://localhost:192/proveedores/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIyNzYyNTcyLCJpYXQiOjE2OTg2MTkxNjJ9.MZhG8WuZIzJuv6i8G9kynSX3AHG1HKs1mz4kVWGjCtM
+
+###31- nivel 3 ADMIN, el listado completo de proveedores.
+GET http://localhost:192/proveedores/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIyNzYyNTcyLCJpYXQiOjE2OTg2MTkxNjJ9.MZhG8WuZIzJuv6i8G9kynSX3AHG1HKs1mz4kVWGjCtM
+
+
+###32-nivel 3 ADMIN, datos de un proveedor en particular consignado por su número de id 
+GET http://localhost:192/proveedores/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIyNzYyNTcyLCJpYXQiOjE2OTg2MTkxNjJ9.MZhG8WuZIzJuv6i8G9kynSX3AHG1HKs1mz4kVWGjCtM
+
+###33- ADMIN  permite guardar un nuevo prvoeedor.
+POST http://localhost:192/proveedores/agregar
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIyNzYyNTcyLCJpYXQiOjE2OTg2MTkxNjJ9.MZhG8WuZIzJuv6i8G9kynSX3AHG1HKs1mz4kVWGjCtM
+
+  {
+    "id_proveedor": 11,
+    "cuit": 34567890123,
+    "razon_social": "Proveedor C" ,
+    "telefono_prov": "1123234456",
+    "email":"ProveedorC@hotmail.com"
+  }
+
+###34- ADMIN cambiar atributo de un proveedor 
+PATCH http://localhost:192/proveedores/editar/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIyNzYyNTcyLCJpYXQiOjE2OTg2MTkxNjJ9.MZhG8WuZIzJuv6i8G9kynSX3AHG1HKs1mz4kVWGjCtM
+
+  { 
+    "cuit": 34567890123,
+    "razon_social": "Proveedor A" ,
+    "telefono_prov": "1123234456",
+    "email":"ProveedorAprueb@hotmail.com",
+    "estado_proveedor": true
+  }
+
+###35 - ADMIN ‘/proveedor/baja/:id’ permite borrar un proveedor logicamente según el id pasado en la url
+DELETE http://localhost:192/proveedores/baja/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+
+
+###36  nivel 3 ADMIN, el listado completo de admins sin baja lógica.  
+GET http://localhost:192/admins/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIzODY3MjkwLCJpYXQiOjE2OTg2MjAyNjd9.CSf6iTgWsa6PCJxyHL4At-dV8WjjXnBlGQHqrhR-g3o
+
+###37 nivel 3 ADMIN, el listado completo de admins.
+GET http://localhost:192/admins/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIzODY3MjkwLCJpYXQiOjE2OTg2MjAyNjd9.CSf6iTgWsa6PCJxyHL4At-dV8WjjXnBlGQHqrhR-g3o
+
+
+###38 nivel 3 ADMIN, datos de un admin en particular consignado por su número de id 
+GET http://localhost:192/admins/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIzODY3MjkwLCJpYXQiOjE2OTg2MjAyNjd9.CSf6iTgWsa6PCJxyHL4At-dV8WjjXnBlGQHqrhR-g3o
+
+###39 ADMIN  permite guardar un nuevo admin.
+POST http://localhost:192/admins/agregar
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIzODY3MjkwLCJpYXQiOjE2OTg2MjAyNjd9.CSf6iTgWsa6PCJxyHL4At-dV8WjjXnBlGQHqrhR-g3o
+  {
+    "id_admin": 6,
+    "cuit": 56765412345,
+    "apellido": "apellidoadmin_2" ,
+    "nombre_admin": "Josefo",
+    "telefono_admin":"1164748454",
+    "email":"Josefo@hotmail.com"
+  }
+
+###40 ADMIN cambiar atributo de un Admin  
+PATCH http://localhost:192/admins/editar/6
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIyNzYyNTcyLCJpYXQiOjE2OTg2MTkxNjJ9.MZhG8WuZIzJuv6i8G9kynSX3AHG1HKs1mz4kVWGjCtM
+
+  { 
+    "cuit": 56765412345,
+    "apellido": "apellidoadmin_2" ,
+    "nombre_admin": "Josefo",
+    "telefono_admin":"1164748454",
+    "email":"Josefo@hotmail.com",
+    "estado_admin": true
+  }
+  
+###41 ADMIN ‘/admin/baja/:id’ permite borrar un admin logicamente según el id pasado en la url
+DELETE http://localhost:192/admins/baja/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjE5MzUyODU1LCJpYXQiOjE2OTg2MTU3NTJ9.3j-LWiXzrKikFrr9U9Oov4AAjJyj5oo9n1Volf4GEXE
+
+
+
+
+###42  nivel 3 ADMIN, el listado completo de clientes sin baja lógica.  
+GET http://localhost:192/clientes/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIzODY3MjkwLCJpYXQiOjE2OTg2MjAyNjd9.CSf6iTgWsa6PCJxyHL4At-dV8WjjXnBlGQHqrhR-g3o
+
+###43 nivel 3 ADMIN, el listado completo de clientes.
+GET http://localhost:192/clientes/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIzODY3MjkwLCJpYXQiOjE2OTg2MjAyNjd9.CSf6iTgWsa6PCJxyHL4At-dV8WjjXnBlGQHqrhR-g3o
+
+
+###44 nivel 3 ADMIN, datos de un cliente en particular consignado por su número de id 
+GET http://localhost:192/clientes/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIzODY3MjkwLCJpYXQiOjE2OTg2MjAyNjd9.CSf6iTgWsa6PCJxyHL4At-dV8WjjXnBlGQHqrhR-g3o
+
+###45 ADMIN  permite guardar un nuevo cliente.
+POST http://localhost:192/clientes/agregar
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIzODY3MjkwLCJpYXQiOjE2OTg2MjAyNjd9.CSf6iTgWsa6PCJxyHL4At-dV8WjjXnBlGQHqrhR-g3o
+  
+  {
+    "id_cliente": 9,
+    "cuil": 56765412345,
+    "apellido": "acosta" ,
+    "nombre_cliente": "Marcos",
+    "telefono_cliente":"1164748454",
+    "email":"Marcos@hotmail.com"
+  }
+
+###46 ADMIN cambiar atributo de un cliente  
+PATCH http://localhost:192/clientes/editar/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIyNzYyNTcyLCJpYXQiOjE2OTg2MTkxNjJ9.MZhG8WuZIzJuv6i8G9kynSX3AHG1HKs1mz4kVWGjCtM
+
+  { 
+    "cuil": 56765412345,
+    "apellido": "cambioApellido" ,
+    "nombre_admin": "cambionombre",
+    "telefono_admin":"1164748454",
+    "email":"prueba@hotmail.com",
+    "estado_cliente": true
+  }
+  
+
+###47 ADMIN ‘/clientes/baja/:id’ permite borrar un cliente logicamente según el id pasado en la url
+DELETE http://localhost:192/clientes/baja/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIyNzYyNTcyLCJpYXQiOjE2OTg2MTkxNjJ9.MZhG8WuZIzJuv6i8G9kynSX3AHG1HKs1mz4kVWGjCtM
