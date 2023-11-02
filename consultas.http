@@ -174,11 +174,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzdWFya
 
 ###26 Requisito nivel 3, Admin. permite obtener el teléfono de un usuario que se indica por id
 GET http://localhost:192/clientes/telefono/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjI2Mjk2NDQ1LCJpYXQiOjE2OTg2MjI2OTZ9.82dCr9yW7-UgjgKbo7Dv7JgWWbx5Uhvuuh85pNNn4oA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzdWFyaW8iOiJ1c3VhcmlvMiIsIm5pdmVsIjoxLCJleHAiOjE2OTg4ODQ2NDU0NDYsImlhdCI6MTY5ODg4MTA0NX0.8tBtOYFW7qhrxp8DWeOXdHtgksHYwNG-E5Kn8YEUFpM
 
 ###27 Requisito nivel 3, Admin. permite obtener el nombre de un usuario que se indica por id.
 GET http://localhost:192/clientes/nombre/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjI2Mjk2NDQ1LCJpYXQiOjE2OTg2MjI2OTZ9.82dCr9yW7-UgjgKbo7Dv7JgWWbx5Uhvuuh85pNNn4oA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzdWFyaW8iOiJ1c3VhcmlvMiIsIm5pdmVsIjoxLCJleHAiOjE2OTg4ODQ2NDU0NDYsImlhdCI6MTY5ODg4MTA0NX0.8tBtOYFW7qhrxp8DWeOXdHtgksHYwNG-E5Kn8YEUFpM
 
 ###28 Requisito nivel 3,Admin. Permite obtener el total del stock actual de productos, la sumatoria de los precios individuales
 GET http://localhost:192/existencias/totalstock
@@ -280,7 +280,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFya
 
 ###42  nivel 3 ADMIN, el listado completo de clientes sin baja lógica.  
 GET http://localhost:192/clientes/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIzODY3MjkwLCJpYXQiOjE2OTg2MjAyNjd9.CSf6iTgWsa6PCJxyHL4At-dV8WjjXnBlGQHqrhR-g3o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzdWFyaW8iOiJ1c3VhcmlvMiIsIm5pdmVsIjoxLCJleHAiOjE2OTg4ODQ2NDU0NDYsImlhdCI6MTY5ODg4MTA0NX0.8tBtOYFW7qhrxp8DWeOXdHtgksHYwNG-E5Kn8YEUFpM
 
 ###43 nivel 3 ADMIN, el listado completo de clientes.
 GET http://localhost:192/clientes/todos
@@ -291,11 +291,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFya
 GET http://localhost:192/clientes/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIzODY3MjkwLCJpYXQiOjE2OTg2MjAyNjd9.CSf6iTgWsa6PCJxyHL4At-dV8WjjXnBlGQHqrhR-g3o
 
-###45 ADMIN  permite guardar un nuevo cliente.
+###45 ADMIN  permite guardar un nuevo cliente.Requisito nivel 3, Admin. permite agregar un cliente. En caso de ser cliente, solo puede agregarse a la entidad cliente si el ID corresponde al Usuario
 POST http://localhost:192/clientes/agregar
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIzODY3MjkwLCJpYXQiOjE2OTg2MjAyNjd9.CSf6iTgWsa6PCJxyHL4At-dV8WjjXnBlGQHqrhR-g3o
-  
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzdWFyaW8iOiJ1c3VhcmlvMiIsIm5pdmVsIjoxLCJleHAiOjE2OTg4ODQ2NDU0NDYsImlhdCI6MTY5ODg4MTA0NX0.8tBtOYFW7qhrxp8DWeOXdHtgksHYwNG-E5Kn8YEUFpM
+
   {
     "id_cliente": 9,
     "cuil": 56765412345,
@@ -305,7 +305,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFya
     "email":"Marcos@hotmail.com"
   }
 
-###46 ADMIN cambiar atributo de un cliente  
+###46 ADMIN cambiar atributo de un cliente. En caso de ser cliente, solo puede modificar con su ID de cliente correspondiente al Usuario
 PATCH http://localhost:192/clientes/editar/1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIyNzYyNTcyLCJpYXQiOjE2OTg2MTkxNjJ9.MZhG8WuZIzJuv6i8G9kynSX3AHG1HKs1mz4kVWGjCtM
@@ -323,3 +323,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFya
 ###47 ADMIN ‘/clientes/baja/:id’ permite borrar un cliente logicamente según el id pasado en la url
 DELETE http://localhost:192/clientes/baja/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsInVzdWFyaW8iOiJhZG1pbjEiLCJuaXZlbCI6MywiZXhwIjoxNjk4NjIyNzYyNTcyLCJpYXQiOjE2OTg2MTkxNjJ9.MZhG8WuZIzJuv6i8G9kynSX3AHG1HKs1mz4kVWGjCtM
+
+###48- Requisito nivel 3, Admin. permite obtener el nombre de un usuario que se indica por id. En caso de ser cliente, solo puede agregar su id de la entidad usuario
+GET http://localhost:192/clientes/nombre/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzdWFyaW8iOiJ1c3VhcmlvMiIsIm5pdmVsIjoxLCJleHAiOjE2OTg4ODc4OTAxMzUsImlhdCI6MTY5ODg4NDI5MH0.xj-o8OcnjtiEHVREqX64Qzs5APFDmIAKNvuQuUQugRY
+
+
+###49- Requisito nivel 3, Admin. permite obtener el teléfono de un usuario que se indica por id. En caso de ser cliente, solo puede obtener el telefono del usuario logeado
+GET http://localhost:192/clientes/telefono/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzdWFyaW8iOiJ1c3VhcmlvMiIsIm5pdmVsIjoxLCJleHAiOjE2OTg4ODc4OTAxMzUsImlhdCI6MTY5ODg4NDI5MH0.xj-o8OcnjtiEHVREqX64Qzs5APFDmIAKNvuQuUQugRY
